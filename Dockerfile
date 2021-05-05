@@ -7,7 +7,8 @@ RUN apt update && apt install curl unzip -y
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/tmp/awscliv2.zip" && \
     cd /tmp && \
     unzip awscliv2.zip && \
-    aws/install
+    aws/install && \
+    rm -rfv /tmp/awscliv2.zip /tmp/aws
 
 WORKDIR /data
 
